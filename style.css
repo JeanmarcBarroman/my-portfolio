@@ -20,6 +20,9 @@
      min-height: 100vh;
     background-color: var(--background);
 }
+body{
+ overflow: x hidden;
+} 
 
  .wrapper{
      width: 1000px;
