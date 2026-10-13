@@ -37,6 +37,7 @@ nav{
      background-color: rgba(15, 15, 15, 0.8);
      backdrop-filter: blur(10px);
      z-index: 1000;
+     flex-wrap: wrap;
 }
 
 ul{
