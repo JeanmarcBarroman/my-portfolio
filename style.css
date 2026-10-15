@@ -1,4 +1,4 @@
-  *{
+   *{
      margin: 0;
      padding: 0;
      box-sizing: border-box;
@@ -19,8 +19,9 @@
   body{
      min-height: 100vh;
     background-color: var(--background);
+    color: var(--text-color);
+    overflow-x: hidden;
 }
-
 
  .wrapper{
      width: 1000px;
@@ -31,7 +32,7 @@ nav{
      position: fixed;
      top: 0;
      width: 100%;
-     padding: 2em 15%;
+     padding: 2.5em 15%;
      display: flex;
      align-items: center;
      justify-content: space-between;
@@ -41,33 +42,40 @@ nav{
      flex-wrap: wrap;
 }
 
+.links{
+     display: flex;
+     align-items: center;
+     gap: 2.5em;
+}
+
 ul{
      display: flex;
      align-items: center;
-     gap: 3em;
+     gap: 10em;
 }
 nav ul a{
-     color: white;
+     color:white;
      opacity: 0.7;
      transition: 0.2s ease-in-out;
- position: relative;
-  justify-content: center;
-  align-items: center;
-  left: 300px;
+     position: relative;
+     justify-content: center;
+     align-items: center;
+     left: 300px;
 }
 
 nav ul a:hover{
-     opacity: 1;
+     opacity: 1;;
 }
 
 .logo{
-     font-size: 2em;
+     position: fixed;
+     font-size: 2.4em;
      color: white;
-     font-weight: 800;
+     font-weight: 80;
      opacity: 0.8;
      transform: 0.2s ease-in-out;
- left: 50px;
-  top: 10px;
+     left: 50px;
+     top: 10px;
 }
 
 .logo:hover{
@@ -94,6 +102,7 @@ nav ul a:hover{
 span{
      background: linear-gradient(to right, #6cff52, #3ec5ff);
      background-clip: text;
+     -webkit-background-clip: text;
      color: transparent;
 }
 
@@ -115,14 +124,14 @@ section{
      position: relative;
      top: 3rem;
      width: 32vh;
-     border-radius: 50%;
+     border-radius: 30%;
      box-shadow: 0 0 25px var(--main-color);
      cursor: pointer;
      transition: 0.4s ease-in-out;
      margin-top: 3em;
 }
 
-.info-boc{
+.info-box{
      display: flex;
      flex-direction: column;
      align-items: center;
@@ -141,7 +150,8 @@ section{
 }
 
 .info-box p{
-     opacity: 0.7;
+     opacity: 5;
+     font-size: 1.3em;
 }
 
 .btn-box{
@@ -205,7 +215,7 @@ section{
      display: flex;
      text-align: left;
      gap: 10em;
-     
+     position: relative;
 }
 
 .skills ul{
@@ -216,6 +226,8 @@ section{
      color: white;
      opacity: 0.8;
      align-items: baseline;
+     flex-wrap: wrap;
+
 }
 
 .skills ul li span{
@@ -457,7 +469,8 @@ border: 3px solid rgb(100, 100, 100);
 }
 
 ::-webkit-scrollbar{
-     width: 15px;
+     width: 0p
+     x;
 }
 
 ::-webkit-scrollbar-thumb{
@@ -571,7 +584,7 @@ border: 3px solid rgb(100, 100, 100);
 }
 
 ::-webkit-scrollbar{
-     width: 15px;
+     width: 5px;
 }
 
 ::-webkit-scrollbar-thumb{
@@ -580,43 +593,110 @@ border: 3px solid rgb(100, 100, 100);
 
 ::-webkit-scrollbar-trasck{
      background-color: var(--main-color);
-     width: 50px;
+     width: 1px;
+}
+.menu-icon{
+     display: none;
 }
 
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    padding: 2em 5%;
-    gap: 0.8em;
-    position: fixed;
-  }
-  ul {
-    gap: 1em;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  nav ul a {
-    font-size: 0.85em;
-    padding: 5%;
-    gap: 3px;
-    left: 5px;
-  }
-  .logo {
-    font-size: 1.5em;
-    top: 50%;
-    left: 5px;
-  }
-  .skills ul span {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0 16;
-  }
+@media(max-width: 768px){
+     /* Hide the menu icon on desktop, show it on mobile */
+     .menu-icon {
+          display: block;
+          font-size: 2em;
+          color: white;
+          cursor: pointer;
+     }
 
-  .skills ul span {
-    position: static;
-    margin: 0 0 16px 0;
-    width: 100%;
-    text-align: left;
-  }
+     nav{
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          padding: 1.5em 5%;
+          position: fixed;
+     }
+
+     /* Hide navigation links by default on mobile */
+     .links{
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          background-color: rgba(15, 15, 15, 0.95);
+          backdrop-filter: blur(10px);
+          flex-direction: column;
+          align-items: center;
+          padding: 1.5em 0;
+          gap: 1.5em;
+          display: none; /* Hidden initially */
+     }
+
+     /* This class gets toggled via JavaScript when clicked */
+     .links.active {
+          display: flex !important;
+          flex-direction: column;
+     }
+
+     ul{
+          gap: 1em;
+          flex-wrap: wrap;
+          justify-content: center;
+     }
+
+     nav ul a{
+          font-size: 1em;
+          padding: 0;
+          left: 0;
+     }
+
+     .logo{
+          position: relative;
+          font-size: 1.5em;
+          top: 0;
+          left: 0;
+     }
+
+    .skills {
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2em 5%;
+        box-sizing: border-box;
+    }
+
+    /* Force the list/spans to stack vertically and never overlap */
+    .skills ul {
+        position: relative !important;
+        display: flex;
+        flex-direction: column;
+        width: 100% !important;
+        height: auto !important;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .skills ul span {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative !important; /* Removes absolute positioning causing overlaps */
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        width: 100% !important;
+        margin: 0 0 20px 0 !important; /* Adds space between each skill block */
+        padding: 0;
+        text-align: left;
+    }
+
+    /* Make sure the text itself is visible and wraps nicely */
+    .skills ul span, .skills p, .skills li {
+        font-size: 1rem; /* Adjust size if text is too big */
+        word-break: break-word;
+    }
 }
