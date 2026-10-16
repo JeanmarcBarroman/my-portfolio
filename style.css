@@ -600,7 +600,7 @@ border: 3px solid rgb(100, 100, 100);
 }
 
 @media(max-width: 768px){
-     /* Hide the menu icon on desktop, show it on mobile */
+     
      .menu-icon {
           display: block;
           font-size: 2em;
@@ -616,7 +616,7 @@ border: 3px solid rgb(100, 100, 100);
           position: fixed;
      }
 
-     /* Hide navigation links by default on mobile */
+     
      .links{
           position: absolute;
           top: 100%;
@@ -628,10 +628,10 @@ border: 3px solid rgb(100, 100, 100);
           align-items: center;
           padding: 1.5em 0;
           gap: 1.5em;
-          display: none; /* Hidden initially */
+          display: none; 
      }
 
-     /* This class gets toggled via JavaScript when clicked */
+     
      .links.active {
           display: flex !important;
           flex-direction: column;
@@ -667,7 +667,7 @@ border: 3px solid rgb(100, 100, 100);
         box-sizing: border-box;
     }
 
-    /* Force the list/spans to stack vertically and never overlap */
+    
     .skills ul {
         position: relative !important;
         display: flex;
@@ -683,20 +683,18 @@ border: 3px solid rgb(100, 100, 100);
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        position: relative !important; /* Removes absolute positioning causing overlaps */
+        position: relative !important; 
         top: auto !important;
         left: auto !important;
         right: auto !important;
         bottom: auto !important;
         width: 100% !important;
-        margin: 0 0 20px 0 !important; /* Adds space between each skill block */
+        margin: 0 0 20px 0 !important; 
         padding: 0;
         text-align: left;
     }
-
-    /* Make sure the text itself is visible and wraps nicely */
     .skills ul span, .skills p, .skills li {
-        font-size: 1rem; /* Adjust size if text is too big */
+        font-size: 1rem; 
         word-break: break-word;
     }
 }
